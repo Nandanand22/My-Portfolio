@@ -1,123 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>M. Nandana Anand | UI/UX Designer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
-            colors: {
-              sand: {
-                50: '#fdfbf7',
-                100: '#f7f1e3',
-                200: '#efe6d5', // Main Beige
-                300: '#e3d2b6',
-                800: '#4a453e',
-                900: '#1c1c1c',
-              },
-              primary: {
-                50: '#f4f4f5',
-                100: '#e4e4e7',
-                500: '#27272a',
-                600: '#18181b', // Almost Black
-                700: '#09090b', // Black
-              },
-              obsidian: {
-                950: '#13111C', // Deep purple/black background
-                900: '#1F1D2B', // Dark card background
-                800: '#2D2B3B', // Lighter borders/inputs
-                700: '#3E3B4F', // Hover states
-              }
-            },
-            animation: {
-              'fade-in': 'fadeIn 0.5s ease-in-out',
-            },
-            keyframes: {
-              fadeIn: {
-                '0%': { opacity: '0' },
-                '100%': { opacity: '1' },
-              }
-            }
-          },
-        },
-      }
-    </script>
-    <style>
-      /* Custom scrollbar for better aesthetics */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #efe6d5;
-      }
-      .dark ::-webkit-scrollbar-track {
-        background: #13111C;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #a8a29e;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #78716c;
-      }
-      .glass-panel {
-        background: rgba(239, 230, 213, 0.85);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      }
-      .dark .glass-panel {
-        background: rgba(31, 29, 43, 0.85);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      }
-      
-      /* Hover underline animation for links */
-      .hover-underline-animation {
-        display: inline-block;
-        position: relative;
-      }
 
-      .hover-underline-animation::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 1.5px;
-        bottom: 0;
-        left: 0;
-        background-color: currentColor;
-        transform-origin: bottom right;
-        transition: transform 0.25s ease-out;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M. Nandana Anand | UI/UX Designer</title>
 
-      .hover-underline-animation:hover::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-  <body class="bg-sand-200 text-slate-900 dark:bg-obsidian-950 dark:text-slate-100 transition-colors duration-300">
-    <div id="root"></div>
+
+<!-- The classes here control the background color -->
+
+<body class="bg-sand-200 text-slate-900 dark:bg-obsidian-950 dark:text-slate-100 transition-colors duration-300">
+  <div id="root"></div>
+
+  <!-- This starts your React App -->
   <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>
