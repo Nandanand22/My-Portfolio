@@ -34,6 +34,11 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+
+    # ← <- IMPORTANT: this environment line fixes the "Missing environment" error
+    environment:
+      name: github-pages
+
     steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
