@@ -106,7 +106,7 @@ const Header: React.FC<HeaderProps> = ({ isDark, toggleTheme }) => {
           ))}
           <a 
             href="/resume.pdf"
-            download="Nandana_Anand_Resume.pdf"
+            download="resume.pdf"
             className="mt-4 flex w-full items-center justify-center gap-2 px-5 py-3 bg-black text-white dark:bg-white dark:text-black rounded-none font-bold uppercase tracking-widest"
           >
             <Download size={18} />
