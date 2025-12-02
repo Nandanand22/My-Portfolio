@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* This file uses Tailwind directives; ignore unknown at-rules in some linters */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
