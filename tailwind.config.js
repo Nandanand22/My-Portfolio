@@ -2,14 +2,15 @@
 export default {
   content: [
     "./index.html",
-    "./*.{js,ts,jsx,tsx}", // Scans your App.tsx and index.tsx in the root
-    "./components/**/*.{js,ts,jsx,tsx}", // Scans your components folder
+    "./*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        // keep Inter as default sans
+        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       colors: {
         sand: {
@@ -38,5 +39,26 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    /**
+     * Use `any` here to avoid TS complaints about Tailwind's internal plugin API types.
+     * @param {any} api
+     */
+    function (api) {
+      const { addBase, theme } = api;
+      addBase({
+        "html, body": {
+          fontFamily: theme("fontFamily.sans").join(", "),
+          color: theme("colors.gray.900"), // default text color (dark)
+          backgroundColor: theme("colors.sand.50"), // keep your light sand bg
+          "-webkit-font-smoothing": "antialiased",
+          "-moz-osx-font-smoothing": "grayscale",
+        },
+        // ensure anchor tags inherit text color unless styled
+        a: {
+          color: "inherit",
+        },
+      });
+    },
+  ],
 };
